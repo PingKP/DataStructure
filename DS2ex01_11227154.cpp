@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <sstream>  // for string separating
-#include <fstream>  // for file reading
-#include <math.h>   // for log2()
+#include <sstream>  
+#include <fstream>
+#include <math.h>
 using namespace std;
 
 // *******************************************************************************
@@ -23,16 +23,16 @@ class SchoolData{
     string departmentName;
     string timeSlots;
     string degree;
-    string students;
-    string teachers;
-    string graduates;
+    int students;
+    int teachers;
+    int graduates;
     string locatedCity;
     string type;
   public:
     SchoolData(int num, stringstream &inputString);
-    int returnNum();
-    int returnGraduated();
-    int returnStudents();
+    int getNum();
+    int getGraduated();
+    int getStudents();
 };
 
 
@@ -49,46 +49,56 @@ class SchoolList {
 
 
 class Node {
-  public:
     int serialNum;
     int value;
+  public:
     Node(int serialNum, int value);
+    int getNum();
+    int getValue();
 };
 
+int inLayer(int position);
 
 class Heap {
-  public:
+  protected:
     vector<Node*> array;
-    void add(int num, int value);   // push_back newData onto array
+    ~Heap();
+    void maxHeapify(int start, int end);
+    void minHeapify(int start, int end);
+    bool isMaxLayer(int position);
+  public:
+    void add(int serialNum, int value);   // push_back newData onto array
     bool isEmpty();
-    int fullLayers();
-    int returnValue(int position);  // return the value of the node
+    void clear();
     void showRoot();
     void showBottom();
     void showLeftmostBottom();
-    void maxHeapify(int index);
-    void minHeapify(int index);
-    bool isMaxLayer(int position);
-    void minMaxHeapify();
 };
 
-class DEAP {
-    Heap minHeap;
-    Heap maxHeap;
-    public:
+class MaxHeap : public Heap {
+  public:
     void insert(int serialNum, int value);
-    void showBottom();
-    void showLeftmostBottom();
-    void clear();
+    void showResult();
+};
+
+class MinMaxHeap : public Heap {
+  private:
+    void minMaxHeapify();  
+  public:
+    void insert(int serialNum, int value);
+    void showResult();
+};
+
+class DEAP : public Heap {
+  public:
+    DEAP();
+    void insert(int serialNum, int value);
+    void showResult();
 };
 
 
 class CommandExecuter {
     SchoolList dataStorage;
-    Heap maxHeap;
-    Heap minMaxHeap;
-    DEAP deap;
-    
   public:
     bool read();    // read the input file and store into dataStorage
     void buildMaxHeap();
@@ -139,6 +149,7 @@ int main(void) {
 // SchoolData *********************************************************************
 
 SchoolData::SchoolData(int num, stringstream &inputString) {
+    string temp;
     this->num = num;
     getline(inputString, this->schoolNumber, '\t');
     getline(inputString, this->schoolName, '\t');
@@ -146,24 +157,25 @@ SchoolData::SchoolData(int num, stringstream &inputString) {
     getline(inputString, this->departmentName, '\t');
     getline(inputString, this->timeSlots, '\t');
     getline(inputString, this->degree, '\t');
-    getline(inputString, this->students, '\t');
-    getline(inputString, this->teachers, '\t');
-    getline(inputString, this->graduates, '\t');
+    getline(inputString, temp, '\t');
+    this->students = stoi(stringToPureNum(temp));
+    getline(inputString, temp, '\t');
+    this->teachers = stoi(stringToPureNum(temp));
+    getline(inputString, temp, '\t');
+    this->graduates = stoi(stringToPureNum(temp));
     getline(inputString, this->locatedCity, '\t');
     getline(inputString, this->type, '\t');
 }
 
-int SchoolData::returnGraduated() {
-    return stoi(stringToPureNum(this->graduates));
-    return 0;
+int SchoolData::getGraduated() {
+    return this->graduates;
 }
 
-int SchoolData::returnStudents() {
-    return stoi(stringToPureNum(this->students));
-    return 0;
+int SchoolData::getStudents() {
+    return this->students;
 }
 
-int SchoolData::returnNum() {
+int SchoolData::getNum() {
     return this->num;
 }
 
@@ -215,8 +227,24 @@ Node::Node(int serialNum, int value) {
     return;
 }
 
+int Node::getNum() {
+    return this->serialNum;
+}
+
+int Node::getValue() {
+    return this->value;
+}
+
 
 // Heap ***************************************************************************
+
+int inLayer(int position) {
+    return (int)log2(position+1);
+}
+
+Heap::~Heap() {
+    clear();
+}
 
 void Heap::add(int num, int value) {
     Node* newNode = new Node(num, value);
@@ -230,22 +258,16 @@ bool Heap::isEmpty() {
     return false;
 }
 
-int Heap::returnValue(int position) {
-    if (position >= array.size())
-        return -1;
-    return this->array.at(position)->value;
-}
-
-void Heap::maxHeapify(int index) {
-    if (index == 0)
-        index = (array.size())-1;
-    int parent = (index-1)/2;
-    while (parent != index) {
+void Heap::maxHeapify(int start, int end) {
+    if (start == 0)
+        start = (array.size())-1;
+    int parent = (start-1)/2;
+    while (parent >= end && parent != start) {
         // if child is larger than parent
-        if (array[index]->value > array[parent]->value) {
-            swap(array[index], array[parent]);    // exchange
-            index = parent;
-            parent = (index-1)/2;
+        if (array[start]->getValue() > array[parent]->getValue()) {
+            swap(array[start], array[parent]);    // exchange
+            start = parent;
+            parent = (start-1)/2;
         }
         else
             break;
@@ -253,16 +275,16 @@ void Heap::maxHeapify(int index) {
     return;
 }
 
-void Heap::minHeapify(int index) {
-    if (index == 0)
-        index = (array.size())-1;
-    int parent = (index-1)/2;
-    while (parent != index) {
-        // if child is larger than parent
-        if (array[index]->value < array[parent]->value) {
-            swap(array[index], array[parent]);   // exchange
-            index = parent;
-            parent = (index-1)/2;
+void Heap::minHeapify(int start, int end) {
+    if (start == 0)
+        start = (array.size())-1;
+    int parent = (start-1)/2;
+    while (parent >= end && parent != start) {
+        // if child is smaller than parent
+        if (array[start]->getValue() < array[parent]->getValue()) {
+            swap(array[start], array[parent]); 
+            start = parent;
+            parent = (start-1)/2;
         }
         else
             break;
@@ -271,23 +293,61 @@ void Heap::minHeapify(int index) {
 }
 
 bool Heap::isMaxLayer(int position) {
-    if (((int)log2(position+1))%2 == 1)
+    if ((inLayer(position))%2 == 1)
         return true;
     return false;
 }
 
-void Heap::minMaxHeapify() {
+void Heap::showRoot() {
+    Node* root = this->array.at(0);
+    cout << "root: [" << root->getNum() << "] " << root->getValue() << endl;
+}
+
+void Heap::showBottom() {
+    Node* bottom = array.at(array.size()-1);
+    cout << "bottom: [" << bottom->getNum() 
+         << "] " << bottom->getValue() << endl;
+}
+
+void Heap::showLeftmostBottom() {
+    int layers = (int)log2(array.size());
+    int leftmostPosition = exp2(layers)-1;
+    Node* leftmostBottom = array.at(leftmostPosition);
+    cout << "leftmost bottom: [" << leftmostBottom->getNum() 
+         << "] " << leftmostBottom->getValue() << endl;
+}
+
+void Heap::clear() {
+    this->array.clear();
+}
+
+// MaxHeap ***************************************************************************
+
+void MaxHeap::insert(int serialNum, int value) {
+    add(serialNum, value);
+    maxHeapify(array.size()-1, 0);
+}
+
+void MaxHeap::showResult() {
+    showRoot();
+    showBottom();
+    showLeftmostBottom();
+}
+
+// MinMaxHeap ************************************************************************
+
+void MinMaxHeap::minMaxHeapify() {
     int index = (array.size())-1;
     int parent = (index-1)/2;
     int grandparent = (parent-1)/2;
     while (parent != index) {
         // if parent's layer is max and child is larger than parent
-        if ((isMaxLayer(parent) && array[index]->value > array[parent]->value) ||
-            (!isMaxLayer(parent) && array[index]->value < array[parent]->value)) {
+        if ((isMaxLayer(parent) && array[index]->getValue() > array[parent]->getValue()) ||
+            (!isMaxLayer(parent) && array[index]->getValue() < array[parent]->getValue())) {
             swap(array[index], array[parent]);    // exchange
         }  
-        else if ((isMaxLayer(grandparent) && array[index]->value > array[grandparent]->value) ||
-                 (!isMaxLayer(grandparent) && array[index]->value < array[grandparent]->value)) {
+        else if ((isMaxLayer(grandparent) && array[index]->getValue() > array[grandparent]->getValue()) ||
+                 (!isMaxLayer(grandparent) && array[index]->getValue() < array[grandparent]->getValue())) {
             swap(array[index], array[grandparent]);    // exchange
         }
         index = parent;
@@ -297,75 +357,61 @@ void Heap::minMaxHeapify() {
     return;
 }
 
-int Heap::fullLayers() {
-    return (int)log2(this->array.size()+1);
+void MinMaxHeap::insert(int serialNum, int value) {
+    add(serialNum, value);
+    minMaxHeapify();
 }
 
-void Heap::showRoot() {
-    Node* root = this->array.at(0);
-    cout << "root: [" << root->serialNum << "] " << root->value << endl;
-}
-
-void Heap::showBottom() {
-    Node* bottom = array.at(array.size()-1);
-    cout << "bottom: [" << bottom->serialNum << "] " << bottom->value << endl;
-}
-
-void Heap::showLeftmostBottom() {
-    int layers = (int)log2(array.size());
-    int leftmostPosition = exp2(layers)-1;
-    Node* leftmostBottom = array.at(leftmostPosition);
-    cout << "leftmost bottom: [" << leftmostBottom->serialNum << "] " << leftmostBottom->value << endl;
+void MinMaxHeap::showResult() {
+    showRoot();
+    showBottom();
+    showLeftmostBottom();
 }
 
 // DEAP ******************************************************************************
 
-void DEAP::insert(int serialNum, int value) {
-    int comparePosMin, comparePosMax;
+DEAP::DEAP() {
+    array.push_back(nullptr);
+}
 
-    // determine which heap to insert
-    if (minHeap.fullLayers() <= maxHeap.fullLayers()) {
-        minHeap.add(serialNum, value);
-        minHeap.minHeapify(0);
-        comparePosMin = minHeap.array.size()-1;
-        comparePosMax = (comparePosMin-1)/2; 
+void DEAP::insert(int serialNum, int value) {
+    add(serialNum, value);
+    
+    if (array.size() < 3)
+        return;
+    int newIndex = array.size()-1;
+    int layers = (int)log2(array.size());
+    int leftmostPosition = exp2(layers)-1;
+    int inLayerPos = newIndex - leftmostPosition;
+    int halfLayerSpace = exp2(layers-1);
+    bool inMin = (inLayerPos/halfLayerSpace == 0);
+    int comparePosMin, comparePosMax;
+    
+    if (inMin) {
+        minHeapify(0, 1);
+        comparePosMin = newIndex;
+        comparePosMax = (newIndex + halfLayerSpace-1)/2;
     }
     else {
-        maxHeap.add(serialNum, value);
-        maxHeap.maxHeapify(0);
-        comparePosMax = maxHeap.array.size()-1;
-        comparePosMin = comparePosMax;
+        maxHeapify(0, 2);
+        comparePosMin = newIndex - halfLayerSpace;
+        comparePosMax = newIndex;
     }
 
-    // minHeap connect to maxHeap
-    if (maxHeap.array.size() >= 1 &&
-        minHeap.array[comparePosMin]->value > maxHeap.array[comparePosMax]->value) {
-        swap(minHeap.array[comparePosMin], maxHeap.array[comparePosMax]);
-        minHeap.minHeapify(comparePosMin);
-        maxHeap.maxHeapify(comparePosMax);
+    if (array[comparePosMin]->getValue() > array[comparePosMax]->getValue()) {
+        swap(array[comparePosMin], array[comparePosMax]);
+        minHeapify(comparePosMin, 1);
+        maxHeapify(comparePosMax, 2);
     }
     
 }
 
-void DEAP::showBottom() {
-    int layers = exp2((int)log2(maxHeap.array.size()+1))-1;
-    if (maxHeap.array.size() - layers > 0)
-        maxHeap.showBottom();
-    else
-        minHeap.showBottom();
-}
-
-void DEAP::showLeftmostBottom() {
-    minHeap.showLeftmostBottom();
-} 
-
-void DEAP::clear() {
-    minHeap.array.clear();
-    maxHeap.array.clear();
+void DEAP::showResult() {
+    showBottom();
+    showLeftmostBottom();
 }
 
 // CommandExecuter *******************************************************************
-
 
 string stringToPureNum(string &str) {
     string pureNum;
@@ -397,42 +443,35 @@ bool CommandExecuter::read() {
 }
 
 void CommandExecuter::buildMaxHeap() {
-    maxHeap.array.clear();
+    MaxHeap maxHeap;
     SchoolData* dataPtr;
     for (int i = 0;i < dataStorage.size();i++) {
         dataPtr = dataStorage.returnData(i);
-        maxHeap.add(dataPtr->returnNum(), dataPtr->returnGraduated());
-        maxHeap.maxHeapify(0);
+        maxHeap.insert(dataPtr->getNum(), dataPtr->getGraduated());
     }
     cout << "<max heap>" << endl;
-    maxHeap.showRoot();
-    maxHeap.showBottom();
-    maxHeap.showLeftmostBottom();
+    maxHeap.showResult();
 }
 
 void CommandExecuter::buildMinMaxHeap() {
-    minMaxHeap.array.clear();
+    MinMaxHeap minMaxHeap;
     SchoolData* dataPtr;
     for (int i = 0;i < dataStorage.size();i++) {
         dataPtr = dataStorage.returnData(i);
-        minMaxHeap.add(dataPtr->returnNum(), dataPtr->returnStudents());
-        minMaxHeap.minMaxHeapify();
+        minMaxHeap.insert(dataPtr->getNum(), dataPtr->getStudents());
     }
     cout << "<min-max heap>" << endl;
-    minMaxHeap.showRoot();
-    minMaxHeap.showBottom();
-    minMaxHeap.showLeftmostBottom();
+    minMaxHeap.showResult();
 }
 
 void CommandExecuter::buildDEAP() {
-    deap.clear();
+    DEAP *deap = new DEAP();
     SchoolData* dataPtr;
     for (int i = 0;i < dataStorage.size();i++) {
         dataPtr = dataStorage.returnData(i);
-        deap.insert(dataPtr->returnNum(), dataPtr->returnGraduated());
+        deap->insert(dataPtr->getNum(), dataPtr->getGraduated());
     }
     cout << "<DEAP>" << endl;
-    deap.showBottom();
-    deap.showLeftmostBottom();
-    // minMaxHeap.showAll("2");
+    deap->showResult();
 }
+
