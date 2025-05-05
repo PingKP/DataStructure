@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.2">
   <diagram name="第 1 页" id="eh_oC0r6jtMJTT0Lbxbz">
-    <mxGraphModel dx="1027" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1081" dy="475" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="0QwCboWLs11f5m9PyI3C-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-2" target="0QwCboWLs11f5m9PyI3C-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0QwCboWLs11f5m9PyI3C-2" value="雜湊表" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="0QwCboWLs11f5m9PyI3C-2" value="清空 雜湊表" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="120" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="0QwCboWLs11f5m9PyI3C-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-4" target="0QwCboWLs11f5m9PyI3C-7">
@@ -36,14 +36,69 @@
         <mxCell id="0QwCboWLs11f5m9PyI3C-10" value="第 i 筆 讀入資料 存在" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="280" y="410" width="160" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="0QwCboWLs11f5m9PyI3C-11" value="轉換成所需格式" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="300" y="610" width="120" height="60" as="geometry" />
+        <mxCell id="0QwCboWLs11f5m9PyI3C-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-11" target="0QwCboWLs11f5m9PyI3C-20">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0QwCboWLs11f5m9PyI3C-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-14" target="0QwCboWLs11f5m9PyI3C-11">
+        <mxCell id="0QwCboWLs11f5m9PyI3C-11" value="轉換成所需格式&lt;div&gt;hData&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-14" target="0QwCboWLs11f5m9PyI3C-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-14" target="0QwCboWLs11f5m9PyI3C-11">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="0QwCboWLs11f5m9PyI3C-14" value="算出 雜湊值" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-18" target="0QwCboWLs11f5m9PyI3C-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-18" target="0QwCboWLs11f5m9PyI3C-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-18" value="雜湊表 於 位置&lt;div&gt;為空&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="710" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-20" target="0QwCboWLs11f5m9PyI3C-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-20" value="該位置替換成&lt;div&gt;hData&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-23" target="0QwCboWLs11f5m9PyI3C-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="1000" />
+              <mxPoint x="680" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-23" value="i++" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="970" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-26" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="798" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-27" target="0QwCboWLs11f5m9PyI3C-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="700" />
+              <mxPoint x="305" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-27" value="&lt;div&gt;位置++&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="0QwCboWLs11f5m9PyI3C-30" target="0QwCboWLs11f5m9PyI3C-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-30" value="位置 = 雜湊值" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QwCboWLs11f5m9PyI3C-37" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="720" width="40" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
