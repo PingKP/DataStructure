@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.6">
   <diagram name="第 1 页" id="WL0u0sDxM7gEnPlghRzT">
-    <mxGraphModel dx="1778" dy="444" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1975" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -72,14 +72,23 @@
         <mxCell id="dySYtPKOJJfRIR36e7s4-18" value="建立新物件getObj&lt;div&gt;其id = getID&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="540" y="255" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="dySYtPKOJJfRIR36e7s4-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-19" target="dySYtPKOJJfRIR36e7s4-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="255" />
+              <mxPoint x="760" y="180" />
+              <mxPoint x="870" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-19" value="將getObj&lt;div&gt;放入&amp;lt;表&amp;gt;中&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="755" y="255" width="120" height="60" as="geometry" />
+          <mxGeometry x="710" y="255" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-22" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="595" y="217" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dySYtPKOJJfRIR36e7s4-23" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="865" y="157" width="120" height="60" as="geometry" />
+        <mxCell id="dySYtPKOJJfRIR36e7s4-23" value="將getObj 放進 putObj&lt;div&gt;的getters陣列裡&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="827" y="147" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-28" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="595" y="98" width="40" height="30" as="geometry" />
@@ -94,6 +103,14 @@
             <Array as="points">
               <mxPoint x="440" y="50" />
               <mxPoint x="440" y="177" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dySYtPKOJJfRIR36e7s4-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-35" target="dySYtPKOJJfRIR36e7s4-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="50" />
+              <mxPoint x="760" y="180" />
             </Array>
           </mxGeometry>
         </mxCell>
