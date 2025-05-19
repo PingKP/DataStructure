@@ -21,7 +21,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-3" value="讀入的第1個 ID(名為putID)&lt;div&gt;已在&amp;lt;表&amp;gt;中&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="210" y="142" width="190" height="70" as="geometry" />
+          <mxGeometry x="190" y="142" width="230" height="70" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-5" target="dySYtPKOJJfRIR36e7s4-35">
           <mxGeometry relative="1" as="geometry">
@@ -29,7 +29,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-5" value="讀入的第2個 ID(名為getID)&lt;div&gt;已在&amp;lt;表&amp;gt;中&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="520" y="142" width="190" height="70" as="geometry" />
+          <mxGeometry x="500" y="142" width="230" height="70" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-7" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="270" y="98" width="40" height="30" as="geometry" />
@@ -70,7 +70,7 @@
         <mxCell id="dySYtPKOJJfRIR36e7s4-18" value="建立新物件getObj&lt;div&gt;其id = getID&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="490" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="dySYtPKOJJfRIR36e7s4-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-19" target="dySYtPKOJJfRIR36e7s4-23">
+        <mxCell id="dySYtPKOJJfRIR36e7s4-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-19" target="dySYtPKOJJfRIR36e7s4-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-19" value="將getObj&lt;div&gt;放入&amp;lt;表&amp;gt;中&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
