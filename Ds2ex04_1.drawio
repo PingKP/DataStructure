@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.6">
   <diagram name="第 1 页" id="WL0u0sDxM7gEnPlghRzT">
-    <mxGraphModel dx="1904" dy="1632" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2126" dy="1728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -46,7 +46,7 @@
         <mxCell id="dySYtPKOJJfRIR36e7s4-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-10" target="dySYtPKOJJfRIR36e7s4-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="dySYtPKOJJfRIR36e7s4-10" value="建立新物件putObj&lt;div&gt;其id = putID&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+        <mxCell id="dySYtPKOJJfRIR36e7s4-10" value="建立新物件&lt;div&gt;名為putObj&lt;div&gt;其id = putID&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="140" y="260" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-12" target="dySYtPKOJJfRIR36e7s4-5">
@@ -67,7 +67,7 @@
         <mxCell id="dySYtPKOJJfRIR36e7s4-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-18" target="dySYtPKOJJfRIR36e7s4-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="dySYtPKOJJfRIR36e7s4-18" value="建立新物件getObj&lt;div&gt;其id = getID&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+        <mxCell id="dySYtPKOJJfRIR36e7s4-18" value="建立新物件&lt;div&gt;名為getObj&lt;div&gt;其id = getID&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="490" y="260" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dySYtPKOJJfRIR36e7s4-19" target="dySYtPKOJJfRIR36e7s4-23">
@@ -118,8 +118,8 @@
         <mxCell id="dySYtPKOJJfRIR36e7s4-46" value="將讀入的 weight&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;放進&amp;nbsp;&lt;/span&gt;&lt;div&gt;putObj&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;的陣列裡&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(名為weightVec)&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="800" y="152" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="dySYtPKOJJfRIR36e7s4-49" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-120" y="580" width="120" height="60" as="geometry" />
+        <mxCell id="dySYtPKOJJfRIR36e7s4-49" value="&amp;lt;表&amp;gt;的物件照其id&lt;div&gt;由小排到大&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="555" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-51" value="失敗" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-40" y="180" width="50" height="30" as="geometry" />
@@ -140,7 +140,7 @@
           <mxGeometry x="380" y="-50" width="160" height="40" as="geometry" />
         </mxCell>
         <mxCell id="dySYtPKOJJfRIR36e7s4-55" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;整理 和 寫檔&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="380" y="500" width="160" height="40" as="geometry" />
+          <mxGeometry x="380" y="450" width="160" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
